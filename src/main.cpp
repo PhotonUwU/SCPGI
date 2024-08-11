@@ -45,6 +45,10 @@ int main(int argc, char* argv[]) {
             if (event.type == SDL_QUIT) {
                 running = false;
             }
+            else if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_RESIZED) {
+                    WIN_WIDTH = event.window.data1;
+                    WIN_HEIGHT = event.window.data2;
+            }
         }
         // Call game loop function
         GAME_LOOP(window, renderer);

@@ -12,11 +12,10 @@ SRCS := $(wildcard $(SRC_DIR)/*.cpp)
 OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 
 # Default target
-all: $(BUILD_DIR)/$(TARGET)
+all: $(TARGET)
 
 # Link the final executable
-$(BUILD_DIR)/$(TARGET): $(OBJS)
-	@mkdir -p $(BUILD_DIR)
+$(TARGET): $(OBJS)
 	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
 
 # Compile .cpp files to .o files
@@ -26,6 +25,6 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 # Clean build artifacts
 clean:
-	rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/$(TARGET)
+	rm -f $(BUILD_DIR)/*.o $(TARGET)
 
 .PHONY: all clean

@@ -1,5 +1,3 @@
-#ifndef MAP_HPP
-#define MAP_HPP
 #include <iostream>
 #include "globals.h"
 
@@ -69,4 +67,3 @@ void LoadChunk(char* save, int x, int y, Chunk* dest);
 void SaveChunk(char* save, int x, int y, Chunk* data);
 void LoadAttr(char* save, Player* player, GameVars* gamevars);
 void SaveAttr(char* save, Player* player, GameVars* gamevars);
-#endif
