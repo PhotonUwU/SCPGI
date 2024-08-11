@@ -1,9 +1,31 @@
 #include <SDL2/SDL.h>
 #include "map.hpp"
+#include <iostream>
 
 void GAME_INIT(SDL_Window* window, SDL_Renderer* renderer)
 {
-	
+	std::cout << "SCP: Green Insignia" << std::endl;
+	std::cout << "A game set in the SCP Universe" << std::endl;
+	std::cout << "By Photon Law" << std::endl;
+	SDL_Delay(3000);
+	std::cout << "The following are written by the following authors, as a part of the SCP wiki, liscensed under CC-BY-SA, in no particular order:" << std::endl;
+	std::cout << "Chaos Insurgency written by Kain Pathos Crow" << std::endl;
+	std::cout << "SCP 939 written by Adam Smascher and EchoFourDelta" << std::endl;
+	std::cout << "SCP 096 written by Dr Dan" << std::endl;
+	std::cout << "SCP 173 written by Moto42" << std::endl;
+	std::cout << "SCP 049 written by djkaktus & Gabriel Jade" << std::endl;
+	std::cout << "SCP 106 written by Dr Gears" << std::endl;
+	SDL_Delay(5000);
+	std::cout << "Programming by Photon Law" << std::endl;
+	std::cout << "Textures by Photon Law" << std::endl;
+	std::cout << "Models by Photon Law" << std::endl;
+	std::cout << "FMV Intro by Photon Law" << std::endl;
+	std::cout << "Story by Photon Law" << std::endl;
+	std::cout << "\"Photon Law\" is an alias, and not a legal name" << std::endl;
+	SDL_Delay(3000);
+	std::cout << "Business & Legal contact: photonlaw6+SCPGI@gmail.com" << std::endl;
+	std::cout << "SCP: " << WIN_TITLE << "is distributed under the CC-BY-SA liscence" << std::endl;
+	SDL_Delay(3000)
 }
 
 void GAME_LOOP(SDL_Window* window, SDL_Renderer* renderer)
