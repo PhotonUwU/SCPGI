@@ -10,8 +10,8 @@ void GAME_INIT()
 	std::cout << ";;  A game set in the SCP Universe  ;;" << std::endl;
 	std::cout << ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;" << std::endl;
 	SDL_Delay(3000);
-	std::cout << "The following are written by the following authors,\nas a part of the SCP wiki, \nliscensed under CC-BY-SA, \nin no particular order:" << std::endl;
-	SDL_Delay(1750);
+	std::cout << "The following are on the SCP Wiki, under CC-BY-SA liscence:" << std::endl;
+	SDL_Delay(2500);
 	std::cout << std::endl;
 	std::cout << "Chaos Insurgency written by Kain Pathos Crow" << std::endl;
 	SDL_Delay(500);
