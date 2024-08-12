@@ -3,6 +3,9 @@
 #include "primary.hpp"
 
 int main(int argc, char* argv[]) {
+    // Initialize game
+    GAME_INIT(window, renderer);
+    
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;
@@ -33,9 +36,6 @@ int main(int argc, char* argv[]) {
         SDL_Quit();
         return 1;
     }
-
-    // Initialize game
-    GAME_INIT(window, renderer);
 
     // Main game loop
     bool running = true;
