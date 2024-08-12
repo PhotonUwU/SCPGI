@@ -44,7 +44,8 @@ void GAME_INIT(bool silent)
 		std::cout << "Business & Legal contact: photonlaw6+SCPGI@gmail.com" << std::endl;
 		std::cout << "=====================================================" << std::endl;
 		SDL_Delay(1000);
-		std::cout << "SCP: " << WIN_TITLE << "is distributed under the CC-BY-SA liscence" << std::endl;
+		std::cout << "SCP: " << WIN_TITLE << " is distributed under the CC-BY-SA liscence" << std::endl;
+		std::cout << "https://creativecommons.org/licenses/by-sa/3.0/deed.en" << std::endl;
 		SDL_Delay(3000);
 		std::cout << "=====================================================" << std::endl;
 	}
