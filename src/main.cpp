@@ -4,6 +4,7 @@
 
 bool SILENT_START = false;
 bool DEBUG = false;
+bool HELP = false;
 
 void parseArgs(int argc, char* argv[]) {
     for (int i = 1; i < argc; ++i) {
@@ -13,6 +14,8 @@ void parseArgs(int argc, char* argv[]) {
             SILENT_START = true;
         } else if (arg == "-d" || arg == "--debug") {
             DEBUG = true;
+        } else if (arg == "-h" || arg == "--help"){
+        	HELP = true;
         }
     }
 }
@@ -20,6 +23,13 @@ void parseArgs(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
 
 	parseArgs(argc, argv);
+	if(HELP){
+		std::cout << "Usage: scpgi [FLAGS]" << std::endl;
+		std::cout << "-s OR --no-startup: Skips the Game Startup, including Game Name, Attributions, Liscence, & Splashscreen" << std::endl;
+		std::cout << "-d OR --debug: Enables Debug Info in terminal, & starts the game in a Debug level, as well as allowing spectator mode" << std::endl;
+		std::cout << "-h OR --help: Displays this help screen" << std::endl;
+		return 0;
+	}
     // Initialize game
     GAME_INIT(SILENT_START);
     
