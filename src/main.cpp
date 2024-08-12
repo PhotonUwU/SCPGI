@@ -2,9 +2,26 @@
 #include <iostream>
 #include "primary.hpp"
 
+bool SILENT_START = false;
+bool DEBUG = false;
+
+void parseArgs(int argc, char* argv[]) {
+    for (int i = 1; i < argc; ++i) {
+        std::string arg = argv[i];
+        
+        if (arg == "-s" || arg == "--no-startup") {
+            SILENT_START = true;
+        } else if (arg == "-d" || arg == "--debug") {
+            DEBUG = true;
+        }
+    }
+}
+
 int main(int argc, char* argv[]) {
+
+	parseArgs(argc, argv);
     // Initialize game
-    GAME_INIT();
+    GAME_INIT(SILENT_START);
     
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -51,7 +68,7 @@ int main(int argc, char* argv[]) {
             }
         }
         // Call game loop function
-        GAME_LOOP(window, renderer);
+        GAME_LOOP(window, renderer, DEBUG);
         SDL_Delay(1000/TICKSPEED);
     }
 
