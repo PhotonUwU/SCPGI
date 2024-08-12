@@ -11,17 +11,18 @@ void GAME_INIT()
 	std::cout << ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;" << std::endl;
 	SDL_Delay(3000);
 	std::cout << "The following are written by the following authors,\nas a part of the SCP wiki, \nliscensed under CC-BY-SA, \nin no particular order:" << std::endl;
-	SDL_Delay(1000);
+	SDL_Delay(1750);
+	std::cout << std::endl;
 	std::cout << "Chaos Insurgency written by Kain Pathos Crow" << std::endl;
-	SDL_Delay(200);
+	SDL_Delay(500);
 	std::cout << "SCP 939 written by Adam Smascher and EchoFourDelta" << std::endl;
-	SDL_Delay(200);
+	SDL_Delay(500);
 	std::cout << "SCP 096 written by Dr Dan" << std::endl;
-	SDL_Delay(200);
+	SDL_Delay(500);
 	std::cout << "SCP 173 written by Moto42" << std::endl;
-	SDL_Delay(200);
+	SDL_Delay(500);
 	std::cout << "SCP 049 written by djkaktus & Gabriel Jade" << std::endl;
-	SDL_Delay(200);
+	SDL_Delay(500);
 	std::cout << "SCP 106 written by Dr Gears" << std::endl;
 	std::cout << "=====================================================" << std::endl;
 	SDL_Delay(5000);
@@ -34,7 +35,7 @@ void GAME_INIT()
 	std::cout << "FMV Intro by Photon Law" << std::endl;
 	SDL_Delay(200);
 	std::cout << "Story by Photon Law" << std::endl;
-	SDL_Delay(1000);
+	SDL_Delay(750);
 	std::cout << std::endl;
 	std::cout << "\"Photon Law\" is an alias, and not a legal name" << std::endl;
 	std::cout << "=====================================================" << std::endl;
@@ -44,6 +45,7 @@ void GAME_INIT()
 	SDL_Delay(1000);
 	std::cout << "SCP: " << WIN_TITLE << "is distributed under the CC-BY-SA liscence" << std::endl;
 	SDL_Delay(3000);
+	std::cout << "=====================================================" << std::endl;
 }
 
 void GAME_LOOP(SDL_Window* window, SDL_Renderer* renderer)
