@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 		return 0;
 	}
     // Initialize game
-    GAME_INIT(SILENT_START);
+    GAME_INIT(SILENT_START, DEBUG);
     
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {

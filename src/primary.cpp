@@ -2,7 +2,7 @@
 #include "map.hpp"
 #include <iostream>
 
-void GAME_INIT(bool silent)
+void GAME_INIT(bool silent, bool debug)
 {
 	if(!silent){
 		std::cout << "\x1b[32;1m";
@@ -55,6 +55,9 @@ void GAME_INIT(bool silent)
 		SDL_Delay(3000);
 		std::cout << "=====================================================" << std::endl;
 		std::cout << "\x1b[0m" << std::endl;
+	}
+	if(debug){
+		std::cout << "DEBUG MODE ENABLED" << std::endl;
 	}
 }
 
