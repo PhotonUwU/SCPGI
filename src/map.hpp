@@ -6,9 +6,10 @@
 class Item{
 	public:
 		char* Name[32];
-
+		int Texture;
+		int HoldTexture;
+		int Data[8];
 		void Use(){}
-		
 };
 
 class Player{
@@ -57,6 +58,7 @@ class Object{
 };
 
 struct Chunk{
+	int Position[2];
 	Wall walls[1024];
 	Sector sectors[512];
 	Object objects[4096];
