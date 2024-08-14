@@ -1,6 +1,6 @@
 # Define the compiler and flags
 CXX := g++
-CXXFLAGS := -Wall -g -I/usr/include/SDL2
+CXXFLAGS := -g -I/usr/include/SDL2 -fpermissive
 LDFLAGS := -lSDL2
 SRC_DIR := src
 BUILD_DIR := build

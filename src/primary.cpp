@@ -1,6 +1,11 @@
 #include <SDL2/SDL.h>
 #include "map.hpp"
+#include "renderer.hpp"
 #include <iostream>
+
+Chunk map[5];
+Player player;
+unsigned short int State = 0;
 
 void GAME_INIT(bool silent, bool debug)
 {
@@ -56,12 +61,25 @@ void GAME_INIT(bool silent, bool debug)
 		std::cout << "=====================================================" << std::endl;
 		std::cout << "\x1b[0m" << std::endl;
 	}
+	else
+	{
+		State = 1;
+	}
 	if(debug){
 		std::cout << "DEBUG MODE ENABLED" << std::endl;
+		LoadChunk("DEBUG", 0, 0, &map[0]);
+		State = 2;
 	}
+	return;
 }
 
 void GAME_LOOP(SDL_Window* window, SDL_Renderer* renderer, bool debug)
 {
-	
+	SDL_SetRenderDrawColor(renderer, 0,0,0,255);
+	SDL_RenderClear(renderer);
+	if(State==2){
+		Render(window, renderer, player.Pos[0],player.Pos[1],player.Pos[2],player.Rot[0],player.Rot[1], true, &map[0]);
+	}
+	SDL_RenderPresent(renderer);
+	return;
 }

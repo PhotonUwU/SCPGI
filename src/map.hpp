@@ -3,9 +3,10 @@
 #include <iostream>
 #include "globals.h"
 
+
 class Item{
 	public:
-		char* Name[32];
+		std::string Name;
 		int Texture;
 		int HoldTexture;
 		int Data[8];
@@ -20,6 +21,9 @@ class Player{
 		// When hit, armor takes DMG*Armortype damage, and health takes DMG*(1-Armortype) damage
 		double Speed = 5 / TICKSPEED; // u / sec
 
+		double Pos[3];
+		double Rot[2];
+		
 		Item inventory[16];
 };
 
@@ -63,12 +67,12 @@ struct Chunk{
 	Sector sectors[512];
 	Object objects[4096];
 	bool Doors[4];
-	unsigned short int Tags[4096];
+	unsigned short int Tags[512];
 	Item items[512]; //Items ground objects contain pointers to the item
 };
 
-void LoadChunk(char* save, int x, int y, Chunk* dest);
-void SaveChunk(char* save, int x, int y, Chunk* data);
+void LoadChunk(std::string save, int x, int y, Chunk* dest);
+void SaveChunk(std::string save, int x, int y, Chunk* data);
 void LoadAttr(char* save, Player* player, GameVars* gamevars);
 void SaveAttr(char* save, Player* player, GameVars* gamevars);
 #endif

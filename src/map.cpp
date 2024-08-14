@@ -1,11 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <sstream>
 #include "globals.h"
 
 class Item{
 	public:
-		char* Name[32];
+		std::string Name;
 		int Texture;
 		int HoldTexture;
 		int Data[8];
@@ -68,7 +69,13 @@ struct Chunk{
 	Item items[512]; //Items ground objects contain pointers to the item
 };
 
-void LoadChunk(char* save, int x, int y, Chunk* dest);
-void SaveChunk(char* save, int x, int y, Chunk* data);
+void LoadChunk(std::string save, int x, int y, Chunk* dest)
+{
+    
+}
+void SaveChunk(std::string save, int x, int y, Chunk* data)
+{
+    
+}
 void LoadAttr(char* save, Player* player, GameVars* gamevars);
 void SaveAttr(char* save, Player* player, GameVars* gamevars);
