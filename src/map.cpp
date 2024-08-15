@@ -88,7 +88,9 @@ void LoadChunk(std::string save, int x, int y, Chunk* dest)
     	return;
     }
 
-    while(file.good())
+    std::string line;
+	char loadState = 'N';
+    while( std::getline(file, line) )
     {
     	
     }
