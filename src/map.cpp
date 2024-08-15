@@ -71,7 +71,27 @@ struct Chunk{
 
 void LoadChunk(std::string save, int x, int y, Chunk* dest)
 {
-    
+    // Get the file path
+    std::string path;
+    if(save=="DEBUG"){
+    	path = "Assets/Debug.sav";
+    }else{
+    	path = "Data/" + path + ".sav";
+    }
+
+    std::ifstream file;
+
+    file.open(path);
+    if(!file.is_open())
+    {
+		std::cout << "Failed to open:" << path << std::endl; 
+    	return;
+    }
+
+    while(file.good())
+    {
+    	
+    }
 }
 void SaveChunk(std::string save, int x, int y, Chunk* data)
 {
