@@ -92,6 +92,38 @@ void LoadChunk(std::string save, int x, int y, Chunk* dest)
 	char loadState = 'N';
     while( std::getline(file, line) )
     {
+    	if(state == 'N')
+    	{
+    		if(line != "[Chunk "+std::to_string(x)+" "+std::to_string(y)+"]")
+    		{
+    			continue;
+    		}
+    		else
+    		{
+    			state = 'C';
+    		}
+    	}
+    	else
+    	{
+    		if(state=='C')
+    		{
+    			switch(line){
+    				case "[Globals]":
+    					state = 'G';
+    				case "[Walls]":
+    					state = 'W';
+    				case "[Sectors]":
+    					state = 'S';
+    				case "[Objects]":
+    					state = 'O';
+    				case "[Items]":
+    					state = 'I';
+    				default:
+    					state = 'C';
+    			}
+    		}
+    	}
+
     	
     }
 }
