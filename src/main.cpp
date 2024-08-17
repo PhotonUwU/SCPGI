@@ -5,6 +5,7 @@
 bool SILENT_START = false;
 bool DEBUG = false;
 bool HELP = false;
+bool MAP = false;
 
 void parseArgs(int argc, char* argv[]) {
     for (int i = 1; i < argc; ++i) {
@@ -16,6 +17,10 @@ void parseArgs(int argc, char* argv[]) {
             DEBUG = true;
         } else if (arg == "-h" || arg == "--help"){
         	HELP = true;
+        } else if (arg == "-m" || arg == "--map"){
+            MAP = true;
+            SILENT_START = true;
+            DEBUG = true;
         }
     }
 }
@@ -27,11 +32,12 @@ int main(int argc, char* argv[]) {
 		std::cout << "Usage: scpgi [FLAGS]" << std::endl;
 		std::cout << "-s OR --no-startup: Skips the Game Startup, including Game Name, Attributions, Liscence, & Splashscreen" << std::endl;
 		std::cout << "-d OR --debug: Enables Debug Info in terminal, & starts the game in a Debug level, as well as allowing spectator mode" << std::endl;
-		std::cout << "-h OR --help: Displays this help screen" << std::endl;
+		std::cout << "-m OR --map: Enables the flags above, and enables the map editor" << std::endl;
+        std::cout << "-h OR --help: Displays this help screen" << std::endl;
 		return 0;
 	}
     // Initialize game
-    GAME_INIT(SILENT_START, DEBUG);
+    GAME_INIT(SILENT_START, DEBUG, MAP);
     
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {

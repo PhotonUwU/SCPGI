@@ -7,7 +7,7 @@ Chunk map[5];
 Player player;
 unsigned short int State = 0;
 
-void GAME_INIT(bool silent, bool debug)
+void GAME_INIT(bool silent, bool debug, bool mapeditor)
 {
 	if(!silent){
 		std::cout << "\x1b[32;1m";
@@ -70,6 +70,10 @@ void GAME_INIT(bool silent, bool debug)
 		LoadChunk("DEBUG", 0, 0, &map[0]);
 		State = 2;
 	}
+	if(mapeditor){
+		std::cout << "MAP EDIT MODE ENABLED" << std::endl;
+		State = 5000;
+	}
 	return;
 }
 
@@ -77,7 +81,7 @@ void GAME_LOOP(SDL_Window* window, SDL_Renderer* renderer, bool debug)
 {
 	SDL_SetRenderDrawColor(renderer, 0,0,0,255);
 	SDL_RenderClear(renderer);
-	if(State==2){
+	if(State==2 || State == 5000){
 		Render(window, renderer, player.Pos[0],player.Pos[1],player.Pos[2],player.Rot[0],player.Rot[1], true, &map[0]);
 	}
 	SDL_RenderPresent(renderer);
